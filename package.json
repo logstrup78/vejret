@@ -1,0 +1,22 @@
+{
+  "name": "vejret",
+  "version": "1.0.0",
+  "description": "En vejr app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logstrup78/vejret.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logstrup78/vejret/issues"
+  },
+  "homepage": "https://github.com/logstrup78/vejret#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
