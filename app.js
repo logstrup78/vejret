@@ -1,14 +1,17 @@
 
 const express = require("express");
 const https = require ("https");
+const config = require ("./config")
 const app = express();
 
+console.log(config);
 
 /*GET funktion. */
 app.get("/", function(req,res){
 
+    const api = config.keys;
     const query =
-      "https://api.openweathermap.org/data/2.5/weather?appid=XXXXXXXXXXXXXX&lang=da&q=copenhagen&units=metric";
+      "https://api.openweathermap.org/data/2.5/weather?appid=" + api + "&lang=da&q=copenhagen&units=metric";
 
 https.get(query, function (response) {
       console.log(response.statusCode);
