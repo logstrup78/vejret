@@ -19,13 +19,15 @@ https.get(query, function (response) {
         const feels = weatherData.main.feels_like;
         const weatherDescription = weatherData.weather[0].description;
 
-        console.log(temp);
+        res.write('<head><meta charset="utf-8"></head>');
+        res.write('<h1>Vejret er således</h1>');
+        res.write('<h2>Temperaturen er ' + temp + ' grader,men føles som ' + feels + ' grader</h2>')
       });
     });
 
 /*Herunder er hvad der vises i browseren*/
     
-    res.send("App is up and running")
+    // res.send("app is up and running");
 });
 
 
