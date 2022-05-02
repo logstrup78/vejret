@@ -8,7 +8,7 @@ const app = express();
 app.get("/", function(req,res){
 
     const query =
-      "https://api.openweathermap.org/data/2.5/weather?appid=99fcd1599ec1c9c403961abde484fd86&lang=da&q=copenhagen&units=metric";
+      "https://api.openweathermap.org/data/2.5/weather?appid=XXXXXXXXXXXXXX&lang=da&q=copenhagen&units=metric";
 
 https.get(query, function (response) {
       console.log(response.statusCode);
