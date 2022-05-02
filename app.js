@@ -4,7 +4,6 @@ const https = require ("https");
 const config = require ("./config")
 const app = express();
 
-console.log(config);
 
 /*GET funktion. */
 app.get("/", function(req,res){
