@@ -9,21 +9,21 @@ const app = express();
 app.get("/", function(req,res){
 
     const api = config.keys;
-    const query =
-      "https://api.openweathermap.org/data/2.5/weather?appid=" + api + "&lang=da&q=copenhagen&units=metric";
+    const city = 'Copenhagen';
+    const query = "https://api.openweathermap.org/data/2.5/weather?appid=" + api + "&lang=da&q=" + city + "&units=metric";
 
 https.get(query, function (response) {
       console.log(response.statusCode);
 
       response.on("data", function (data) {
         const weatherData = JSON.parse(data);
-        const temp = weatherData.main.temp;
-        const feels = weatherData.main.feels_like;
+        const temp = Math.round(weatherData.main.temp);
+        const feels = Math.round(weatherData.main.feels_like);
         const weatherDescription = weatherData.weather[0].description;
 
         res.write('<head><meta charset="utf-8"></head>');
-        res.write('<h1>Vejret er således</h1>');
-        res.write('<h2>Temperaturen er ' + temp + ' grader,men føles som ' + feels + ' grader</h2>')
+        res.write('<h1>Vejret er således i ' + city + '</h1>');
+        res.write('<h2>Temperaturen er ' + temp + ' grader, men føles som ' + feels + ' grader.</h2>')
       });
     });
 
